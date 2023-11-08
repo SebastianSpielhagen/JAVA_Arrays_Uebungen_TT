@@ -46,10 +46,17 @@ public class ArrayUebungen {
     }
 
     public static int[] elementwiseArraySum(int[] numberArray1, int[] numberArray2) {
-        int[] result = new int[numberArray1.length];
-        for (int i = 0; i < numberArray1.length; i++) {
-            result[i] = numberArray1[i] + numberArray2[i];
+        // TODO: Check if both arrays have the same length. If not, return null. Without this check, no addition is possible.
+
+        if (numberArray1.length != numberArray2.length) {
+            System.out.println("Die Arrays haben nicht die gleiche Länge");
+            return null;
         }
-        return result;
+        int[] resultingNumberArray = new int[numberArray1.length];
+        for (int i = 0; i < numberArray1.length; i++) {
+            resultingNumberArray[i] = numberArray1[i] + numberArray2[i];
+        }
+        return resultingNumberArray;
+
     }
 }
